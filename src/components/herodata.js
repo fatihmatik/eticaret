@@ -1,26 +1,26 @@
 export const herodata = [
   {
-    image: "/images/placeholder1.png",
+    image: "/images/placeholder4.webp",
     title: "Havlu",
   },
   {
-    image: "/images/placeholder2.png",
+    image: "/images/placeholder5.webp",
     title: "Elektronik",
   },
   {
-    image: "/images/placeholder3.png",
+    image: "/images/placeholder6.webp",
     title: "Araba",
   },
   {
-    image: "/images/placeholder4.png",
+    image: "/images/placeholder7.webp",
     title: "Aksesuarlar",
   },
   {
-    image: "/images/placeholder5.png",
+    image: "/images/placeholder8.webp",
     title: "Kozmetik",
   },
   {
-    image: "/images/placeholder6.png",
+    image: "/images/placeholder9.webp",
     title: "Beyaz Eşya",
   },
 ];
