@@ -1,30 +1,32 @@
-import Navbar from "./components/navbar/Navbar";
-import BigCategories from "./components/Bigcategories/BigCategories";
-import Hero from "./components/hero/hero";
-import Footer from "./components/Footer/Footer.js";
-import ArrayCategories from "./components/ArrayCategories/ArrayCategories.js";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { herodata } from "./components/herodata.js";
-import { randomElements, remainingElements } from "./utils/imageUtils.js"; // get the randomly selected image urls
+import Home from "./pages/Home";
+import About from "./pages/About";
+import NoPage from "./pages/NoPage";
+import Shopping from "./pages/Shopping";
+import Cart from "./pages/Cart";
+import Profile from "./pages/Profile";
+import Navbar from "./components/NavBar";
+import ProductDetailPage from "./components/ProductDetailPage";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <BigCategories imagesArray={randomElements} />
-
-      <div className="flex flex-col items-center mt-[64px]">
-        <p className="text-[48px] font-bold text-slate-700">Populer</p>
-        <Hero images={herodata} />
+      <div className="pt-14 bg-gray-100">
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/shopping" element={<Shopping />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products/:productId" element={<ProductDetailPage />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
       </div>
-      <div className="flex flex-col items-center mt-[64px]">
-        <p className="text-[48px] font-bold text-slate-700">Indirim</p>
-        <Hero images={herodata} />
-      </div>
-
-      <Footer />
-      <ArrayCategories imageURLs={remainingElements} />
-    </>
+    </BrowserRouter>
   );
 }
 
